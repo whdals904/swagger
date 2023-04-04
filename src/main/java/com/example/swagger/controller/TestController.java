@@ -33,7 +33,7 @@ public class TestController {
 
         School school = new School();
         school.setId("UNIV002");
-        school.setAddress("서울시 마포구");
+        school.setAddress("서울시 마포구 123");
         school.setUniv_name("홍익대학교");
 
         Member member = new Member();
