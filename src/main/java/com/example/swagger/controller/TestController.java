@@ -37,7 +37,7 @@ public class TestController {
         school.setUniv_name("홍익대학교");
 
         Member member = new Member();
-        member.setName("김종민");
+        member.setName("김종윤");
         member.setPassword("1234");
         member.setEmail("whdals904@iscu.ac.kr");
         member.setSchool(school);
