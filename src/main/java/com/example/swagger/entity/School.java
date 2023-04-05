@@ -1,6 +1,8 @@
 package com.example.swagger.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -9,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class School implements Serializable {
 
     @Id
@@ -19,7 +22,6 @@ public class School implements Serializable {
     private String id;
 
     @OneToMany(mappedBy = "school")
-    @ToString.Exclude
     private List<Member> members = new ArrayList<Member>();
 
     private String univ_name;

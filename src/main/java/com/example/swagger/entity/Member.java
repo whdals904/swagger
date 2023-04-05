@@ -8,18 +8,20 @@ import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class Member {
     @Id
     @GeneratedValue
     private Long seq;
 
     @ManyToOne
-    @JoinColumn(name="school_id", foreignKey = @ForeignKey(value=ConstraintMode.NO_CONSTRAINT),  referencedColumnName = "id")
-    @ToString.Exclude
+    @JoinColumn(name="school_seq")
     private School school;
 
     private String name;
+
+    private int age;
 
     private String password;
 

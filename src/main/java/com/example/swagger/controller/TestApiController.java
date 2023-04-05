@@ -2,8 +2,10 @@ package com.example.swagger.controller;
 
 import com.example.swagger.entity.Member;
 import com.example.swagger.entity.School;
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,13 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import java.util.List;
+
+import static com.example.swagger.entity.QMember.member;
+import static com.example.swagger.entity.QSchool.school;
+
 @Controller
 @RestController
 @Api(value="TestApiController")
 public class TestApiController {
 
-    @PersistenceContext
+    @Autowired
     private EntityManager em;
+
+    @Autowired
+    private JPAQueryFactory query;
 
     @GetMapping(value = "/v1/api/test")
     @ApiOperation(value="v1 test1", notes="테스트 v1")
@@ -48,8 +58,6 @@ public class TestApiController {
         em.clear();
 
         Member me = em.find(Member.class,1L);
-        System.out.println("me = " + me);
-
 
         return "test1";
     }
@@ -57,7 +65,9 @@ public class TestApiController {
     @GetMapping(value = "/v1/api/test2")
     @ApiOperation(value="v1 test2", notes="테스트 v1")
     public String Test11(@RequestParam(required =false) String id){
-        System.out.println("idd = " + id);
+
+        List<Member> temp = query.selectFrom(member).where(member.name.eq("김종민").and(member.age.lt(100))).fetch();
+        System.out.println("temp = " + temp);
         return "test2";
     }
 

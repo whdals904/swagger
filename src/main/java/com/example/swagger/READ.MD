@@ -23,12 +23,11 @@ Ctrl+Alt+L = 파일 서식
 Shift+Ctrl+Alt+T = 리펙토링
 shift + shift = 전체검색
 shift + F10 = 실행
-
+Ctrl + Y 한줄삭제
 
 SELECT * FROM MEMBER;
 select * from school;
 
-http://localhost:8081/v1/api/test
+drop table MEMBER;
+drop table school;
 
-3.x 버전 부터는 swagger-ui 경로가 다르다고 합니다.
---http://localhost:8081/swagger-ui/index.html
