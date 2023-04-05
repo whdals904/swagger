@@ -10,8 +10,8 @@ http://localhost:8081/v1/api/test2
 http://localhost:8081/v2/api/test2
 
 CRUD 링크
-http://localhost:8081/insert/member
 http://localhost:8081/insert/school
+http://localhost:8081/insert/member
 http://localhost:8081/select/members
 
 http://localhost:8081/test
@@ -21,4 +21,4 @@ select * from school;
 
 
 
-http://localhost:8081/v1/api/tes3/JONGMIN
+http://localhost:8081/v1/api/member/JONGMIN

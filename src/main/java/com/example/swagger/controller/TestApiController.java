@@ -70,8 +70,8 @@ public class TestApiController {
         return "test2";
     }
 
-    @GetMapping(value = "/v1/api/test3/{id}")
-    @ApiOperation(value="v1 test3", notes="테스트 v1")
+    @GetMapping(value = "/v1/api/member/{id}")
+    @ApiOperation(value="v1 insert", notes="테스트 v1")
     @Transactional
     public Member Test3(@PathVariable("id") String id){
 

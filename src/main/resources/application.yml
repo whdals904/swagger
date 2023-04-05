@@ -27,7 +27,7 @@ spring:
   ## JPA Setting Info
   jpa:
     hibernate:
-      ddl-auto: update  # option type: create, create-drop, update, validate, none
+      ddl-auto: create  # option type: create, create-drop, update, validate, none
     properties:
       hibernate:
         diarect: org.hibernate.dialect.H2Dialect  # 쿼리의 기준이 되는 데이터베이스 엔진을 설정합니다.
@@ -40,7 +40,7 @@ logging:
   level:
     # hibernate 가 남기는 모든 로그가 debug모드로 설정
     # jpa hibernate가 생성하는 sql이 로거를 통해서 찍히도록 하는 설정
-    org.hibernate.SQL: INFO
-    org.hibernate.type: INFO # 실제 들어가는 파라미터값 찍어주는 설정
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace # 실제 들어가는 파라미터값 찍어주는 설정
 
 
