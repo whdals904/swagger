@@ -11,14 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
-import javax.persistence.FlushModeType;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
 
 @Controller
 @RestController
-@Api(value="TestController")
-public class TestController {
+@Api(value="TestApiController")
+public class TestApiController {
 
     @PersistenceContext
     private EntityManager em;
