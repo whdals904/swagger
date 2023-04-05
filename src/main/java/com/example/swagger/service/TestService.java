@@ -10,11 +10,8 @@ import java.util.List;
 
 @Service
 public class TestService {
-
     @Autowired
     private TestRepository testRepository;
-
-
     public void insertMember(Member member){
         testRepository.insertMember(member);
     }
@@ -24,7 +21,6 @@ public class TestService {
     public School findSchool(Long seq){
         return testRepository.findSchoolBySeq(seq);
     }
-
     public List<Member> findAllMembers(){
         return testRepository.findAllMembers();
     }

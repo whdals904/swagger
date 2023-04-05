@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @EntityListeners(AuditingEntityListener.class)
-@ToString
 public class Member extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +29,6 @@ public class Member extends BaseEntity {
     private String password;
 
     private String email;
-
 
     public void setSchool(School school) {
         this.school = school;

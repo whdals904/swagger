@@ -12,7 +12,9 @@ http://localhost:8081/v2/api/test2
 CRUD 링크
 http://localhost:8081/insert/member
 http://localhost:8081/insert/school
-http://localhost:8081/select/member
+http://localhost:8081/select/members
+
+http://localhost:8081/test
 H2 조회
 SELECT * FROM MEMBER;
 select * from school;

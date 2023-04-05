@@ -3,20 +3,19 @@ package com.example.swagger.controller;
 import com.example.swagger.entity.Member;
 import com.example.swagger.entity.School;
 import com.example.swagger.service.TestService;
-import io.swagger.annotations.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Controller
-public class TestController {
+public class TestController{
 
     @Autowired
     private TestService testService;
@@ -55,7 +54,7 @@ public class TestController {
     @GetMapping("/select/members")
     @ResponseBody
     @Transactional
-    public String selectMembers(){
+    public String selectMembers() {
         List<Member> allMembers = testService.findAllMembers();
         System.out.println("allMembers = " + allMembers);
         return "success";
