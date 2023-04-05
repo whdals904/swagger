@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 import static com.example.swagger.entity.QMember.member;
+import static com.example.swagger.entity.QSchool.school;
 
 @Repository
 public class TestRepository {
@@ -41,7 +42,19 @@ public class TestRepository {
     }
 
     public List<Member> findAllMembers() {
-        //return em.createQuery("select m from Member m", Member.class).getResultList();
-        return query.selectFrom(member).fetch();
+       // System.out.println("=================JPQL=====================");
+       // return em.createQuery("select m from Member m", Member.class).getResultList();
+
+        List<Integer> li = query.select(member.age.sum()).from(member).fetch();
+        System.out.println("li = " + li);
+        System.out.println("=================QUERY_DSL=====================");
+//        return query.selectFrom(member).fetch();
+//        return query.selectFrom(member).leftJoin(member.school,school).where(member.seq.gt(2)).fetch();
+        return query.selectFrom(member)
+                .leftJoin(member.school,school)
+                .where(member.seq
+                        .gt(2))
+                .orderBy(member.seq.desc())
+                .fetch();
     }
 }

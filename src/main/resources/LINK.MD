@@ -18,3 +18,7 @@ http://localhost:8081/test
 H2 조회
 SELECT * FROM MEMBER;
 select * from school;
+
+
+
+http://localhost:8081/v1/api/tes3/JONGMIN

@@ -8,9 +8,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -34,13 +32,13 @@ public class TestApiController {
     @GetMapping(value = "/v1/api/test")
     @ApiOperation(value="v1 test1", notes="테스트 v1")
     @Transactional
-    public String Test1(@RequestParam(required =false) String id){
-        System.out.println("id = " + id);
+    public String Test1(){
 
         School school = new School();
         school.setId("UNIV002");
         school.setAddress("서울시 마포구 123");
         school.setUniv_name("샤넬대학교");
+        em.persist(school);
 
         Member member = new Member();
         member.setName("홍길순");
@@ -49,14 +47,10 @@ public class TestApiController {
         member.setSchool(school);
         em.persist(member);
 
-        em.persist(school);
-
-
         em.flush();
         em.clear();
 
         Member me = em.find(Member.class,1L);
-
         return "test1";
     }
 
@@ -69,13 +63,24 @@ public class TestApiController {
         return "test2";
     }
 
-
-
-
     @GetMapping(value = "/v2/api/test2")
     @ApiOperation(value="test1", notes="테스트 v2")
     public String v2Test2(@RequestParam(required =false) String id){
         System.out.println("id = " + id);
         return "test2";
     }
+
+    @GetMapping(value = "/v1/api/test3/{id}")
+    @ApiOperation(value="v1 test3", notes="테스트 v1")
+    @Transactional
+    public Member Test3(@PathVariable("id") String id){
+
+        Member member = new Member();
+        member.setName(id);
+        member.setPassword("1234");
+        member.setEmail("test@test.com");
+        em.persist(member);
+        return member;
+    }
+
 }
