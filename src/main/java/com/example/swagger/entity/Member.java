@@ -2,6 +2,7 @@ package com.example.swagger.entity;
 
 
 import lombok.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 
@@ -10,13 +11,16 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Member {
+@EntityListeners(AuditingEntityListener.class)
+@ToString
+public class Member extends BaseEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seq;
 
     @ManyToOne
     @JoinColumn(name="school_seq")
+    @ToString.Exclude
     private School school;
 
     private String name;

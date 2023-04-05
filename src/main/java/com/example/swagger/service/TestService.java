@@ -6,6 +6,8 @@ import com.example.swagger.repository.TestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TestService {
 
@@ -16,13 +18,14 @@ public class TestService {
     public void insertMember(Member member){
         testRepository.insertMember(member);
     }
-
     public void insertSchool(School school){
         testRepository.insertSchool(school);
     }
-
-
     public School findSchool(Long seq){
-        return testRepository.findSchool(seq);
+        return testRepository.findSchoolBySeq(seq);
+    }
+
+    public List<Member> findAllMembers(){
+        return testRepository.findAllMembers();
     }
 }

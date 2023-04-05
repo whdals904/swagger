@@ -37,17 +37,15 @@ public class TestApiController {
     public String Test1(@RequestParam(required =false) String id){
         System.out.println("id = " + id);
 
-
-
         School school = new School();
         school.setId("UNIV002");
         school.setAddress("서울시 마포구 123");
-        school.setUniv_name("홍익대학교");
+        school.setUniv_name("샤넬대학교");
 
         Member member = new Member();
-        member.setName("김종윤");
+        member.setName("홍길순");
         member.setPassword("1234");
-        member.setEmail("whdals904@iscu.ac.kr");
+        member.setEmail("test@test.com");
         member.setSchool(school);
         em.persist(member);
 

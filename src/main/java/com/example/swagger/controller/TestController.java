@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Controller
 public class TestController {
@@ -32,12 +33,10 @@ public class TestController {
         member.setName("홍길동");
         member.setAge(40);
 
-        School s = new School();
+/*      School s = new School();
         s.setSeq(1L);
-
-        member.setSchool(s);
-       // member.setSchool(testService.findSchool(1L));
-
+        member.setSchool(s);*/
+        member.setSchool(testService.findSchool(1L));
         testService.insertMember(member);
         return "success";
     }
@@ -50,6 +49,15 @@ public class TestController {
         school.setUniv_name("서울사이버대학교");
 
         testService.insertSchool(school);
+        return "success";
+    }
+
+    @GetMapping("/select/members")
+    @ResponseBody
+    @Transactional
+    public String selectMembers(){
+        List<Member> allMembers = testService.findAllMembers();
+        System.out.println("allMembers = " + allMembers);
         return "success";
     }
 }

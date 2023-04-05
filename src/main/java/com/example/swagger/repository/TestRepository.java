@@ -4,13 +4,12 @@ import com.example.swagger.entity.Member;
 import com.example.swagger.entity.School;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 import static com.example.swagger.entity.QMember.member;
-import static com.example.swagger.entity.QSchool.school;
 
 @Repository
 public class TestRepository {
@@ -37,7 +36,12 @@ public class TestRepository {
         System.out.println("s = " + s);
     }
 
-    public School findSchool(Long seq) {
+    public School findSchoolBySeq(Long seq) {
         return em.find(School.class,seq);
+    }
+
+    public List<Member> findAllMembers() {
+        //return em.createQuery("select m from Member m", Member.class).getResultList();
+        return query.selectFrom(member).fetch();
     }
 }
