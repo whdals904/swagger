@@ -14,6 +14,6 @@ public class TempController {
     public String v2Test1(@RequestParam(required =false) String id, Model model){
         System.out.println("id = " + id);
         model.addAttribute("id",id);
-        return "test";
+        return "test11";
     }
 }
