@@ -10,8 +10,13 @@ import java.io.IOException;
 @SpringBootApplication
 public class SwaggerApplication {
 
+
+
 	public static void main(String[] args) throws IOException {
 
 		SpringApplication.run(SwaggerApplication.class, args);
+
+
+
 	}
 }

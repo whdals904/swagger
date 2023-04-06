@@ -19,7 +19,5 @@ H2 조회
 SELECT * FROM MEMBER;
 select * from school;
 
-
-
 http://localhost:8081/v1/api/member/JONGMIN
 http://localhost:8081/v1/api/member/YONGMI
