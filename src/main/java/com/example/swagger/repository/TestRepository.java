@@ -41,6 +41,16 @@ public class TestRepository {
         return em.find(School.class,seq);
     }
 
+    public List<School> findAllSchool() {
+        // System.out.println("=================JPQL=====================");
+        // return em.createQuery("select m from Member m", Member.class).getResultList();
+
+
+//        return query.selectFrom(member).fetch();
+//        return query.selectFrom(member).leftJoin(member.school,school).where(member.seq.gt(2)).fetch();
+        return query.selectFrom(school).fetch();
+    }
+
     public List<Member> findAllMembers() {
        // System.out.println("=================JPQL=====================");
        // return em.createQuery("select m from Member m", Member.class).getResultList();

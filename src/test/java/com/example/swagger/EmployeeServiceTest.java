@@ -17,11 +17,11 @@ import org.springframework.web.client.RestTemplate;
 
 @ExtendWith(MockitoExtension.class)
 public class EmployeeServiceTest {
-
     @Mock
     private RestTemplate restTemplate;
     @InjectMocks
     private EmployeeService empService = new EmployeeService();
+
 
     @Test
     public void Test1() {

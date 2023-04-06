@@ -1,9 +1,6 @@
 package com.example.swagger.entity;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -31,6 +28,7 @@ public class School extends BaseEntity{
 
     private String univ_name;
     private String address;
+
 
     private void addMembers(Member member){
         members.add(member);

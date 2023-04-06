@@ -21,6 +21,10 @@ public class TestService {
     public School findSchool(Long seq){
         return testRepository.findSchoolBySeq(seq);
     }
+    public List<School> findAllSchool(){
+        return testRepository.findAllSchool();
+    }
+
     public List<Member> findAllMembers(){
         return testRepository.findAllMembers();
     }
