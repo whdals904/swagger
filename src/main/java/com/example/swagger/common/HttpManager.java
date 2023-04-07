@@ -19,9 +19,11 @@ public class HttpManager implements Serializable {
     private static HttpManager T_HTTP_MANAGE;
     private static HttpManager P_HTTP_MANAGER;
 
-    static{
-
+    public static enum HttpMode {
+        TEST, PRODUCTON
     }
+
+
     private HttpManager(HttpMode hm){
         common_aaa="COMMON_AAA";
         common_bbb="COMMON_BBB";
