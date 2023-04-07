@@ -18,10 +18,10 @@ public class SwaggerApplication {
 	public static void main(String[] args) throws IOException {
 
 		SpringApplication.run(SwaggerApplication.class, args);
-
 		HttpManager hc = HttpManager.getHttpComponent(HttpManager.HttpMode.TEST);
 		HttpManager hc1 = HttpManager.getHttpComponent(HttpManager.HttpMode.PRODUCTON);
 		List<HttpManager> list = Arrays.asList(hc, hc1);
 		list.stream().forEach(System.out::println);
+
 	}
 }
