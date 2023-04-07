@@ -1,13 +1,9 @@
 package com.example.swagger;
 
-import com.example.swagger.common.HttpManager;
-import com.example.swagger.common.HttpManagerV2;
+import com.example.swagger.common.http.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.client.RestTemplate;
 
 @SpringBootTest
 public class HttpManagerTest {
@@ -37,6 +33,34 @@ public class HttpManagerTest {
         HttpManagerV2 hm = HttpManagerV2.getTestHttpComponent();
         HttpManagerV2 hm1 = HttpManagerV2.getHttpComponent();
         Assertions.assertNotEquals(hm, hm1);
+    }
+
+    @Test
+    public void V3_same(){
+        HttpComponent hm = HttpComponentV3.getTestHttpComponent();
+        HttpComponent hm1 = HttpComponentV3.getTestHttpComponent();
+        Assertions.assertSame(hm, hm1);
+    }
+    @Test
+    public void V3_not_same(){
+        HttpComponent hm = HttpComponentV3.getTestHttpComponent();
+        HttpComponent hm1 = HttpComponentV3.getHttpComponent();
+        Assertions.assertNotEquals(hm, hm1);
+    }
+
+    @Test
+    public void V4_same(){
+        HttpComponentV4 hm = HttpComponentV4.getTestInstance();
+        HttpComponentV4 hm1 = HttpComponentV4.getTestInstance();
+        Assertions.assertSame(hm, hm1);
+    }
+    @Test
+    public void V4_not_same(){
+        HttpComponentV4 hm = HttpComponentV4.getTestInstance();
+        HttpComponentV4 hm1 = HttpComponentV4.getInstance();
+        System.out.println("hm = " + hm);
+        System.out.println("hm1 = " + hm1);
+        Assertions.assertNotEquals(hm,hm1);
     }
 }
 

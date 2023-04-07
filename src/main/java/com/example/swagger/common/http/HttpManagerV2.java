@@ -1,4 +1,4 @@
-package com.example.swagger.common;
+package com.example.swagger.common.http;
 
 
 import lombok.Getter;
@@ -20,8 +20,8 @@ public class HttpManagerV2 implements Serializable {
     private static HttpManagerV2 T_HTTP_MANAGER;
     private static HttpManagerV2 P_HTTP_MANAGER;
 
-    private static enum HttpMode {
-        TEST, PRODUCTON
+    private static  enum HttpMode {
+        TEST, PRODUCTION
     }
 
     private HttpManagerV2(HttpMode hm){
@@ -47,7 +47,7 @@ public class HttpManagerV2 implements Serializable {
 
     public static HttpManagerV2 getHttpComponent(){
         if(P_HTTP_MANAGER == null){
-            P_HTTP_MANAGER = new HttpManagerV2(HttpMode.PRODUCTON);
+            P_HTTP_MANAGER = new HttpManagerV2(HttpMode.PRODUCTION);
         }
         return P_HTTP_MANAGER;
     }

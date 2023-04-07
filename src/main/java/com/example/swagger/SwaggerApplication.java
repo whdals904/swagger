@@ -1,12 +1,11 @@
 package com.example.swagger;
 
-import com.example.swagger.common.HttpManager;
+import com.example.swagger.common.http.HttpManager;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

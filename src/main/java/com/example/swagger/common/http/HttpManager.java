@@ -1,4 +1,4 @@
-package com.example.swagger.common;
+package com.example.swagger.common.http;
 
 
 import lombok.Getter;
