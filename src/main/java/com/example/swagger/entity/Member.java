@@ -1,16 +1,19 @@
 package com.example.swagger.entity;
 
 
-import lombok.*;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 
 
+
+@EqualsAndHashCode(callSuper = true)
+@Data()
 @Entity
-@NoArgsConstructor
-@Getter
-@Setter
 @EntityListeners(AuditingEntityListener.class)
 public class Member extends BaseEntity {
     @Id

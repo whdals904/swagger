@@ -47,6 +47,7 @@ public class TestServiceTest {
     @Test
     @Transactional
     public void test1() throws InterruptedException {
+        System.out.println("testService.findAllMembers() = " + testService.findAllMembers());
         Assertions.assertEquals(3, testService.findAllSchool().size());
     }
 }

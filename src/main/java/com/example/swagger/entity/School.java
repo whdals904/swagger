@@ -1,19 +1,16 @@
 package com.example.swagger.entity;
 
-import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Getter
-@Setter
+@Data
 @EntityListeners(AuditingEntityListener.class)
 public class School extends BaseEntity{
 

@@ -76,5 +76,26 @@ Ctrl + Alt + M
 해당 블록을 메서드로 추출해 버린다.
 Ctrl + Alt + V
 멤버 변수를 지역 변수로 변경한다.
+-----------------------------------
+리펙토링
+변수 뽑아내기 : Ctrl + Alt + V
+파라미터 추출하기 : Ctrl + Alt + P
+메서드 추출 : Ctrl + Alt + M
+이너 클래스 추출 : F6
+이름 일괄 변경 : Shift + F6
+타입 일괄 변경 : Shift + Ctrl + F6
+Import 정리하기 : Ctrl + Alt + O
+코드 자동 정렬 : Ctrl + Alt + L
 
+반드시 익혀야할 단축키
+Ctrl + Shift + Space = 적합한 코드 자동완성 추천
+Shift + Shift = 파일, 클래스, 설정에 관련된 가능한 모든 것을 검색
+Alt + Enter = 퀵픽스 제안
+Alt + Insert = 생성자, Getter,Setter, toString과 같은 코드 생성 (Lombok으로 대체 가능)
+Ctrl + P = 커서가 위치한 메서드의 매개변수 조회
+Ctrl + W = 커서 근처의 코드 선택 영역 확대
+Ctrl + Shift + W = 커서 근처의 코드 선택 영역 축소
+Ctrl + E = 최근 연 파일 목록 검색
+Shift + F6 = Rename
+Ctrl + Alt + O = import 문 정리
 

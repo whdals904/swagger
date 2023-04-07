@@ -42,7 +42,7 @@ logging:
     # jpa hibernate가 생성하는 sql이 로거를 통해서 찍히도록 하는 설정
     org:
       hibernate:
-        SQL: debug
-        type: trace # 실제 들어가는 파라미터값 찍어주는 설정
+        SQL: WARN
+        type: WARN # 실제 들어가는 파라미터값 찍어주는 설정
 
 

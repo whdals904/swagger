@@ -11,6 +11,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.persistence.EntityManager;
@@ -41,7 +42,7 @@ public class TestController{
         member.setSchool(s);*/
         member.setSchool(testService.findSchool(1L));
         testService.insertMember(member);
-        return "success";
+        return "success!!";
     }
 
     @GetMapping("/insert/school")
@@ -52,7 +53,7 @@ public class TestController{
         school.setUniv_name("서울사이버대학교");
 
         testService.insertSchool(school);
-        return "success";
+        return "success11";
     }
 
     @GetMapping("/select/members")

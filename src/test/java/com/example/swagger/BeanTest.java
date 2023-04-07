@@ -1,14 +1,9 @@
 package com.example.swagger;
 
-import com.example.swagger.controller.TestController;
-import com.example.swagger.dto.Employee;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.web.client.RestTemplate;
 
 import javax.persistence.EntityManager;
 
