@@ -23,7 +23,6 @@ public class Member extends BaseEntity {
     private School school;
 
     private String name;
-
     private int age;
 
     private String password;

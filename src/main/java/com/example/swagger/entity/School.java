@@ -30,10 +30,10 @@ public class School extends BaseEntity{
     private String address;
 
 
-    private void addMembers(Member member){
-        members.add(member);
-        if(member.getSchool() != this){
-            member.setSchool(this);
-        }
-    }
+//    private void addMembers(Member member){
+//        members.add(member);
+//        if(member.getSchool() != this){
+//            member.setSchool(this);
+//        }
+//    }
 }
