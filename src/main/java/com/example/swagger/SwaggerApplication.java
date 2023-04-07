@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @EnableJpaAuditing
 @SpringBootApplication
@@ -19,6 +22,9 @@ public class SwaggerApplication {
 
 		HttpManager hc = HttpManager.getHttpComponent(HttpMode.TEST);
 		HttpManager hc1 = HttpManager.getHttpComponent(HttpMode.PRODUCTON);
-
+		List<HttpManager> list = Arrays.asList(hc, hc1);
+		list.stream().forEach(System.out::println);
+		System.out.println("HttpMode.TEST = " + HttpMode.TEST);
+		System.out.println("HttpMode.TEST.name() = " + HttpMode.TEST.name());
 	}
 }

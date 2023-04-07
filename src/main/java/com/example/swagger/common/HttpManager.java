@@ -16,8 +16,8 @@ public class HttpManager implements Serializable {
     private String bb;
     private String cc;
 
-    private static HttpManager testHttpManager;
-    private static HttpManager productionHttpManager;
+    private static HttpManager T_HTTP_MANAGE;
+    private static HttpManager P_HTTP_MANAGER;
 
     static{
 
@@ -38,16 +38,21 @@ public class HttpManager implements Serializable {
         }
     }
     public static HttpManager getHttpComponent(HttpMode hm){
+
+        if(hm == null){
+            hm = HttpMode.PRODUCTON;
+        }
+
         if(HttpMode.TEST.equals(hm)){
-            if(testHttpManager == null){
-                testHttpManager = new HttpManager(hm);
+            if(T_HTTP_MANAGE == null){
+                T_HTTP_MANAGE = new HttpManager(hm);
             }
-            return testHttpManager;
+            return T_HTTP_MANAGE;
         }else {
-            if(productionHttpManager == null){
-                productionHttpManager = new HttpManager(hm);
+            if(P_HTTP_MANAGER == null){
+                P_HTTP_MANAGER = new HttpManager(hm);
             }
-            return productionHttpManager;
+            return P_HTTP_MANAGER;
         }
     }
 }
