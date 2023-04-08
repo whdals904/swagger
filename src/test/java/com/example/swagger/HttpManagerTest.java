@@ -166,6 +166,7 @@ public class HttpManagerTest {
 
         Assertions.assertNotEquals(HttpComponent1, testHttpComponent1);
     }
+
     HttpComponentV6<HttpUnit> commonHttpComponent = new HttpComponentV6<>();
 
     Kakao kakao = Kakao.getInstance();
@@ -173,21 +174,15 @@ public class HttpManagerTest {
 
     Naver naver = Naver.getInstance();
     Naver testNaver = Naver.getTestInstance();
+
     @Test
     public void V6_COMMON2_same(){
-
-
-
         HttpComponentV6<HttpUnit> kakaoHttpComponent = commonHttpComponent.getInstance(kakao);
         HttpComponentV6<HttpUnit> testKakaoHttpComponent = commonHttpComponent.getInstance(testKakao);
-
         Assertions.assertNotEquals(kakaoHttpComponent, testKakaoHttpComponent);
-        
-
 
         HttpComponentV6<HttpUnit> naverHttpComponent1 = commonHttpComponent.getInstance(naver);
         HttpComponentV6<HttpUnit> testNaverHttpComponent1 = commonHttpComponent.getInstance(testNaver);
-
         Assertions.assertNotEquals(naverHttpComponent1, testNaverHttpComponent1);
 
         System.out.println("HttpComponent = " + kakaoHttpComponent);
@@ -203,7 +198,6 @@ public class HttpManagerTest {
         Assertions.assertEquals(commonHttpComponent.getInstance(testKakao), commonHttpComponent.getInstance(testKakao));
         Assertions.assertEquals(commonHttpComponent.getInstance(naver), commonHttpComponent.getInstance(naver));
         Assertions.assertEquals(commonHttpComponent.getInstance(testNaver), commonHttpComponent.getInstance(testNaver));
-
     }
 }
 

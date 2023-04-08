@@ -25,7 +25,7 @@ public class HttpComponentV6<T extends HttpUnit> {
         common_bbb = "COMMON_BBB";
 
         this.aa = a.getParamA();
-        this.bb = a.getParamB();
+        this.bb      = a.getParamB();
         this.cc = a.getParamC();
     }
 
