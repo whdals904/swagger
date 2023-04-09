@@ -21,3 +21,4 @@ select * from school;
 
 http://localhost:8081/v1/api/member/JONGMIN
 http://localhost:8081/v1/api/member/YONGMI
+http://localhost:8081/v1/api/member/AREUM
