@@ -21,6 +21,7 @@ public class SwaggerApplication {
 		HttpManager hc1 = HttpManager.getHttpComponent(HttpManager.HttpMode.PRODUCTON);
 		List<HttpManager> list = Arrays.asList(hc, hc1);
 		list.stream().forEach(System.out::println);
+		System.out.println("list = " + list);
 
 	}
 }
